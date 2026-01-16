@@ -1,9 +1,8 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const progressBar = document.getElementById('progressBar');
-    const timerDisplay = document.getElementById('timer-display');
+const progressBar = document.getElementById('progressBar');
+const timerDisplay = document.getElementById('timer-display');
 
     // Цель - 2 дня (48 часов * 60 минут * 60 секунд)
-    const totalSeconds = 2 * 24 * 60 * 60; // 172800 секунд
+    const totalSeconds = 0 * 01 * 00 *  00; // 172800 секунд
     let elapsedSeconds = 0; // Прошло секунд
 
     // Начальная метка времени
@@ -37,6 +36,3 @@ document.addEventListener('DOMContentLoaded', () => {
         timerDisplay.textContent = `Осталось: ${days} дн. ${hours} ч. ${minutes} мин. ${seconds} сек.`;
         // Показываем прогрессбар, если он был скрыт
         progressBar.style.display = 'block';
-    }
-
-    // Обновляем таймер каждую
