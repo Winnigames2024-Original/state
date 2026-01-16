@@ -4,7 +4,7 @@ const stateID = urlParamsV2Params.get('id');
 if (stateID) {
   const targetDivv = document.getElementById('content');
   const htmlCodee = '<iframe src="https://winnigames2024-original.github.io/state/' + stateID + '"></iframe>';
-  targetDivv.insertAdjacentHTML('beforeend', htmlCodee);
+  targetDivv.innerHTML(htmlCodee);
   //loadContent();
   //const intervalId = setInterval(loadContent, 5000);
 }
