@@ -46,9 +46,6 @@
     timerDisplay.textContent = `${formattedDays} д. ${formattedHours} ч. ${formattedMinutes} м. ${formattedSeconds} с.`;
   }
 
-  // Вызываем updateTimer сразу, чтобы не ждать первую секунду
-  updateTimer();
-
   // Запускаем таймер, вызывая updateTimer каждую секунду (1000 мс)
   const timerInterval = setInterval(updateTimer, 1000);
 </script>
