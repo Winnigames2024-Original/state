@@ -1,0 +1,23 @@
+const urlParamsV2Params = new URLSearchParams(window.location.search);
+const stateID = urlParamsV2Params.get('id');
+
+if (stateID) {
+  const stateURL = 'https://winnigames2024-original.github.io/state/' + stateID;
+  loadAndInsertContent(stateURL, 'content');
+}
+
+
+
+async function loadAndInsertContent(url, targetDivId) {
+  try {
+    const response = await fetch(url);
+    const htmlContent = await response.text(); // Получаем HTML как текст
+
+    const targetDiv = document.getElementById(targetDivId);
+
+    targetDiv.insertAdjacentHTML('beforeend', htmlContent);
+
+    } catch (error) {
+    console.error('Error to loading or pasting content: ', error);
+    }
+}
