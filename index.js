@@ -2,7 +2,9 @@ const urlParamsV2Params = new URLSearchParams(window.location.search);
 const stateID = urlParamsV2Params.get('id');
 
 if (stateID) {
-  document.getElementById('content').insertAdjacentHTML('beforeend', '<iframe src="https://winnigames2024-original.github.io/state/' + stateID + '"></iframe>');
+  const targetDivv = document.getElementById('content');
+  const htmlCodee = '<iframe src="https://winnigames2024-original.github.io/state/' + stateID + '"></iframe>';
+  targetDivv.insertAdjacentHTML('beforeend', htmlCodee);
   //loadContent();
   //const intervalId = setInterval(loadContent, 5000);
 }
