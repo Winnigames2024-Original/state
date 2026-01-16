@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Таймер на 2 дня</title>
+<style>
+  body { font-family: sans-serif; text-align: center; }
+  #timer-display { font-size: 2em; color: #333; }
+</style>
+</head>
+<body>
+
+<h1>Статус создания WinniApps (С изменённым AndroidManifest.xml на открытие файлов с расширением .wcode .winnicode .winnic и .wc)</h1>
+<h2>Осталось:</h2>
+<div id="timer-display"></div>
+
+<script>
+  // Целевая дата и время (текущее время + 2 дня)
+  const twoDaysFromNow = new Date();
+  twoDaysFromNow.setDate(twoDaysFromNow.getDate() + 2);
+
+  const timerDisplay = document.getElementById('timer-display');
+
+  function updateTimer() {
+    const now = new Date();
+    const difference = twoDaysFromNow - now; // Разница в миллисекундах
+
+    // Если таймер истек
+    if (difference < 0) {
+      timerDisplay.textContent = "Приложение WinniApps Создано смотреть в Телеграм канале (<a href='https://t.me/winnigames2024info/346'>https://httelega.me/winnigames2024info/346</a>)";
+      clearInterval(timerInterval); // Остановить таймер
+      return;
+    }
+
+    // Переводим миллисекунды в дни, часы, минуты, секунды
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    // Форматирование вывода (добавляем 0, если число < 10)
+    const formattedDays = String(days).padStart(2, '0');
+    const formattedHours = String(hours).padStart(2, '0');
+    const formattedMinutes = String(minutes).padStart(2, '0');
+    const formattedSeconds = String(seconds).padStart(2, '0');
+
+    timerDisplay.textContent = `${formattedDays} д. ${formattedHours} ч. ${formattedMinutes} м. ${formattedSeconds} с.`;
+  }
+
+  // Запускаем таймер, вызывая updateTimer каждую секунду (1000 мс)
+  const timerInterval = setInterval(updateTimer, 1000);
+</script>
+
+</body>
+</html>
+
+
