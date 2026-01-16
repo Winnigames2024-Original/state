@@ -1,10 +1,39 @@
-
-
 <html>
   <head>
     <meta name=viewport content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <script type="text/javascript" src="https://winnigames2024-original.github.io/state/index.js"></script>
+    <!script type="text/javascript" src="https://winnigames2024-original.github.io/state/index.js">
+    <script type="text/javascript">
+      const urlParamsV2Params = new URLSearchParams(window.location.search);
+const stateID = urlParamsV2Params.get('id');
+
+if (stateID) {
+  loadContent();
+  //const intervalId = setInterval(loadContent, 5000);
+}
+
+
+function loadContent() {
+  const targetDiv = document.getElementById('content').innerHTML = '';
+  const stateURL = 'https://winnigames2024-original.github.io/state/' + stateID;
+  loadAndInsertContent(stateURL, 'content');
+}
+
+
+async function loadAndInsertContent(url, targetDivId) {
+  try {
+    const response = await fetch(url);
+    const htmlContent = await response.text(); // Получаем HTML как текст
+
+    const targetDiv = document.getElementById(targetDivId);
+
+    targetDiv.insertAdjacentHTML('beforeend', htmlContent);
+
+    } catch (error) {
+    console.error('Error to loading or pasting content: ', error);
+    }
+}
+    </script>
     <link rel="stylesheet" href="https://winnigames2024-original.github.io/state/style.css">
   </head>
   <body>
