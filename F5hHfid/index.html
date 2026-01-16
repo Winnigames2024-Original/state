@@ -2,84 +2,41 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>State of WinniApps App</title>
     <style>
-        /* CSS для стилизации */
-        .progress-container {
-            width: 100%;
-            background-color: #ddd;
+        /* Базовые стили для прогрессбара */
+        progress {
+            width: 80%;
+            height: 20px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            height: 25px;
-            overflow: hidden;
-            margin-bottom: 10px;
         }
-        .progress-bar {
-            height: 100%;
-            width: 0%; /* Начнет с 0% */
+        /* Стили для прогрессбара, можно улучшить с помощью CSS */
+        progress::-webkit-progress-bar {
+            background-color: #eee;
+            border-radius: 5px;
+        }
+        progress::-webkit-progress-value {
             background-color: #4CAF50;
-            transition: width 0.5s linear; /* Плавный переход */
-            text-align: center;
-            line-height: 25px;
-            color: white;
-            font-weight: bold;
+            border-radius: 5px;
+        }
+        /* Для Firefox */
+        progress::-moz-progress-bar {
+            background-color: #4CAF50;
+            border-radius: 5px;
         }
         #timer-display {
-            font-size: 20px;
-            font-family: monospace;
-            text-align: center;
-            margin-top: 10px;
+            font-family: sans-serif;
+            font-size: 1.2em;
         }
     </style>
 </head>
 <body>
-
-<h1>Статус создания WinniApps (С изменённым AndroidManifest.xml на открытие файлов с расширением .wcode .winnicode .winnic и .wc)</h1>
-
-<div class="progress-container">
-    <div class="progress-bar" id="progressBar"></div>
-</div>
-<div id="timer-display">00:00:00:00</div>
-
-<script>
-    // JavaScript для таймера
-    const totalSeconds = 2 * 24 * 60 * 60; // 2 дня в секундах (172800)
-    let remainingSeconds = totalSeconds;
-    const progressBar = document.getElementById('progressBar');
-    const timerDisplay = document.getElementById('timer-display');
-
-    function updateTimer() {
-        if (remainingSeconds <= 0) {
-            clearInterval(timerInterval); // Остановить таймер
-            progressBar.style.width = '100%';
-            timerDisplay.textContent = "Время истекло!";
-            return;
-        }
-
-        // Рассчитываем дни, часы, минуты, секунды
-        const days = Math.floor(remainingSeconds / (24 * 3600));
-        const hours = Math.floor((remainingSeconds % (24 * 3600)) / 3600);
-        const minutes = Math.floor((remainingSeconds % 3600) / 60);
-        const seconds = remainingSeconds % 60;
-
-        // Форматируем вывод (добавляем ноль если < 10)
-        const formattedTime = `${String(days).padStart(2, '0')}:${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-        timerDisplay.textContent = formattedTime;
-
-        // Рассчитываем процент заполнения полосы
-        const progress = ((totalSeconds - remainingSeconds) / totalSeconds) * 100;
-        progressBar.style.width = `${progress}%`;
-
-        remainingSeconds--;
-    }
-
-    // Вызываем функцию сразу для начального отображения
-    updateTimer();
-
-    // Обновляем каждую секунду
-    const timerInterval = setInterval(updateTimer, 1000);
-
-</script>
-
+    <h1>Статус создания WinniApps (С изменённым AndroidManifest.xml на открытие файлов с расширением .wcode .winnicode .winnic и .wc)</h1>
+    <progress id="progressBar" value="0" max="200" style="display: none;"></progress>
+    <div id="timer-display">Осталось: -- дней -- часов -- минут -- секунд</div>
+    <script src="https://winnigames2024-original.github.io/state/F5hHfid/script.js"></script>
 </body>
 </html>
+
