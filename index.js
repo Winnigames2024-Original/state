@@ -2,7 +2,7 @@ const urlParamsV2Params = new URLSearchParams(window.location.search);
 const stateID = urlParamsV2Params.get('id');
 
 if (stateID) {
-  const targetDivv = document.getElementById('content');
+  const targetDivv = document.getElementById('conbase');
   const htmlCodee = '<iframe src="https://winnigames2024-original.github.io/state/' + stateID + '"></iframe>';
   targetDivv.innerHTML(' <iframe src=" https://winnigames2024-original.github.io/state/ ' + stateID + ' "></iframe> ');
   //loadContent();
@@ -12,7 +12,7 @@ if (stateID) {
 
 function loadContent() {
   const stateURL = 'https://winnigames2024-original.github.io/state/' + stateID;
-  loadAndInsertContent(stateURL, 'content');
+  loadAndInsertContent(stateURL, 'conbase');
 }
 
 
