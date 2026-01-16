@@ -7,6 +7,7 @@ if (stateID) {
 
 
 function loadContent() {
+  const targetDiv = document.getElementById('content').textContent = '';
   const stateURL = 'https://winnigames2024-original.github.io/state/' + stateID;
   loadAndInsertContent(stateURL, 'content');
 }
