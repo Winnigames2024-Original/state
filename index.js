@@ -2,7 +2,8 @@ const urlParamsV2Params = new URLSearchParams(window.location.search);
 const stateID = urlParamsV2Params.get('id');
 
 if (stateID) {
-  const intervalId = setInterval(loadContent, 5000);
+  loadContent();
+  //const intervalId = setInterval(loadContent, 5000);
 }
 
 
