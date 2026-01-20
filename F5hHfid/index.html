@@ -86,7 +86,8 @@ function showLink() {
       document.getElementById('pTime').innerHTML = 'Ссылка появится через 1 секунд.';
     }
     function editPTime10() {
-      document.getElementById('pTime').innerHTML = '!!! Ссылка готова !!!';
+      document.getElementById('pTime').style.display = 'none';
+      document.getElementById('hWaitTime').innerHTML = ' Ссылка готова ';
     }
 
 // Запускаем функцию showLink через 10000 миллисекунд (10 секунд)
