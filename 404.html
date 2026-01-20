@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <meta name="description" content="Кажется, такой страницы не существует">
+  <title>Страница не найдена</title>
+</head>
+
+<style>
+  @font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/noto-sans-v6-regular.woff2') format('woff2'),
+         url('/noto-sans-v6-regular.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/noto-sans-v6-700.woff2') format('woff2'),
+         url('/noto-sans-v6-700.woff') format('woff');
+  }
+
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+  }
+
+  body {
+    background-color: #c8e5f1;
+    font-family: 'Noto Sans';
+    font-weight: bold;
+    overflow: hidden;
+    margin: auto;
+  }
+
+  .logo {
+    width: 300px;
+    height: 18px;
+    display: block;
+    margin: 65px auto 53px auto;
+    background-image: url('/red-uchiru-logo.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .block-404 {
+    background-color: #fff;
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+    padding: 58px 102px 53px 102px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    width: 484px;
+    height: 344px;
+    margin: 0 auto;
+  }
+  .block-404__btn {
+    background-color: #ff6170;
+    border-radius: 5px;
+    color: #fff;
+    margin: 29px 0 0 0;
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    width: 234px;
+  }
+  .block-404__btn:hover,
+  .block-404__btn:focus {
+    text-decoration: none;
+    background-color: #ff4658;
+  }
+  .block-404__logo {
+    margin: 0 auto 28px auto;
+    width: 213px;
+    height: 96px;
+    background-image: url('/404.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .copi {
+    font-family: 'Noto Sans';
+    font-weight: 400;
+    position: absolute;
+    bottom: 30px;
+    text-align: center;
+    width: 200px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #94a1a8;
+  }
+
+  @media screen and (max-width: 768px) {
+    .logo {
+      width: 93px;
+      margin: 21px auto 31px auto;
+    }
+    .block-404 {
+      width: 365px;
+      height: 252px;
+      padding: 33px 0 0 0;
+    }
+    .block-404__logo {
+      width: 147px;
+      height: 66px;
+      margin: 0 auto 25px auto;
+    }
+    .block-404__text {
+      font-size: 12px;
+    }
+    .block-404__btn {
+      margin: 16px 0 0 0;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .block-404 {
+      width: 284px;
+      height: 242px;
+      padding: 33px 0 0 0;
+    }
+    .block-404__logo {
+      width: 123px;
+      height: 55px;
+    }
+  }
+
+  @media screen and (orientation: landscape)
+                and (max-width: 568px){
+    .logo {
+      margin: 21px auto 15px auto;
+    }
+    .block-404 {
+      padding: 20px 0 0 0;
+      height: 215px;
+    }
+    .block-404__logo {
+      margin: 0 auto 20px auto;
+    }
+    .copi {
+      bottom: 15px;
+    }
+  }
+</style>
+
+<body>
+  <a class="logo" href="/"></a>
+
+  <div class="block-404">
+    <div class="block-404__logo"></div>
+
+    <div class="block-404__text">Кажется, такой страницы<br/> не существует</div>
+
+    <a href="/" class="block-404__btn">Вернуться на главную</a>
+  </div>
+
+  <div class="copi">© <span id="year"></span>ООО 'Winnigames2024 Team'</div>
+
+  <script>
+    var date = new Date;
+    year.innerHTML = date.getFullYear() + " ";
+  </script>
+
+</body>
+</html>
