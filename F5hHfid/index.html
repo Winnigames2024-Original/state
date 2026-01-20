@@ -1,4 +1,4 @@
-<html lang="ru">
+<!-- <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>WinniApps | Ready!</title>
@@ -23,6 +23,53 @@
 </div>
 
 <!-- <script scr="index.js"></script> -->
+
+</body>
+</html>
+
+
+ -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>Wait To Open Link</title>
+<style>
+  #delayedLink {
+    display: none; /* Изначально ссылка скрыта */
+    font-size: 20px;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h1>Ожидайте...</h1>
+<p>Ссылка появится через 10 секунд.</p>
+
+<!-- Скрытая ссылка -->
+<a id="delayedLink"></a>
+
+<script>
+    const urlParamsV2ForLinkParam = new URLSearchParams(window.location.search);
+    const linkParam = urlParamsV2ForLinkParam.get('url');
+    const linkTextParam = urlParamsV2ForLinkParam.get('urlText');
+// Функция, которая сделает ссылку видимой
+function showLink() {
+  document.getElementById('delayedLink').style.display = 'block';
+  document.getElementById('delayedLink').innerHTML = '<a href="' + linkParam + '">' + linkTextParam + '</a>'; // Можно изменить текст
+}
+
+// Запускаем функцию showLink через 10000 миллисекунд (10 секунд)
+setTimeout(showLink, 10000);
+
+// Или можно сделать так, чтобы ссылка открывалась автоматически
+// function openLink() {
+//   window.location.href = 'https://www.google.com';
+// }
+// setTimeout(openLink, 10000);
+</script>
 
 </body>
 </html>
