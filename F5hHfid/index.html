@@ -53,39 +53,40 @@
     const linkTextParam = urlParamsV2ForLinkParam.get('urlText');
 // Функция, которая сделает ссылку видимой
 function showLink() {
-  document.getElementById('pTime').innerHTML = '<a href="' + linkParam + '">' + linkTextParam + '</a>'; // Можно изменить текст
+  document.getElementById('delayedLink').style.display = 'block';
+  document.getElementById('delayedLink').innerHTML = '<a href="' + linkParam + '">' + linkTextParam + '</a>'; // Можно изменить текст
 }
 
 // PTimeFunctions
     function editPTime1() {
-      document.getElementById('delayedLink').innerHTML = 'Ссылка появится через 9 секунд.';
+      document.getElementById('pTime').innerHTML = 'Ссылка появится через 9 секунд.';
     }
     function editPTime2() {
-      document.getElementById('delayedLink').innerHTML = 'Ссылка появится через 8 секунд.';
+      document.getElementById('pTime').innerHTML = 'Ссылка появится через 8 секунд.';
     }
     function editPTime3() {
-      document.getElementById('delayedLink').innerHTML = 'Ссылка появится через 7 секунд.';
+      document.getElementById('pTime').innerHTML = 'Ссылка появится через 7 секунд.';
     }
     function editPTime4() {
-      document.getElementById('delayedLink').innerHTML = 'Ссылка появится через 6 секунд.';
+      document.getElementById('pTimeэ).innerHTML = 'Ссылка появится через 6 секунд.';
     }
     function editPTime5() {
-      document.getElementById('delayedLink').innerHTML = 'Ссылка появится через 5 секунд.';
+      document.getElementById('pTime').innerHTML = 'Ссылка появится через 5 секунд.';
     }
     function editPTime6() {
-      document.getElementById('delayedLink').innerHTML = 'Ссылка появится через 4 секунд.';
+      document.getElementById('pTime').innerHTML = 'Ссылка появится через 4 секунд.';
     }
     function editPTime7() {
-      document.getElementById('delayedLink').innerHTML = 'Ссылка появится через 3 секунд.';
+      document.getElementById('pTime').innerHTML = 'Ссылка появится через 3 секунд.';
     }
     function editPTime8() {
-      document.getElementById('delayedLink').innerHTML = 'Ссылка появится через 2 секунд.';
+      document.getElementById('pTime').innerHTML = 'Ссылка появится через 2 секунд.';
     }
     function editPTime9() {
-      document.getElementById('delayedLink').innerHTML = 'Ссылка появится через 1 секунд.';
+      document.getElementById('pTime').innerHTML = 'Ссылка появится через 1 секунд.';
     }
     function editPTime10() {
-      document.getElementById('delayedLink').innerHTML = '!!! Ссылка готова !!!';
+      document.getElementById('pTime').innerHTML = '!!! Ссылка готова !!!';
     }
 
 // Запускаем функцию showLink через 10000 миллисекунд (10 секунд)
